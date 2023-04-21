@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Walking Cat Animation</title>
+  <style>
+    .cat {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 150px;
+      transform: translate(-50%, -50%);
+      animation: walk 0.5s infinite alternate;
+    }
+    
+    .cat__body {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 80px;
+      background-color: #ffd1dc;
+      border-radius: 50% 50% 20% 20%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .cat__leg {
+      position: absolute;
+      width: 20px;
+      height: 50px;
+      background-color: #ffd1dc;
+      border-radius: 50% 50% 0 0;
+    }
+    
+    .cat__leg--left {
+      top: 70px;
+      left: 50px;
+      transform-origin: bottom;
+      animation: leg-left 0.5s infinite alternate;
+    }
+    
+    .cat__leg--right {
+      top: 70px;
+      left: 130px;
+      transform-origin: bottom;
+      animation: leg-right 0.5s infinite alternate;
+    }
+    
+    @keyframes walk {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      50% {
+        transform: translate(-50%, -50%) rotate(10deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+    }
+    
+    @keyframes leg-left {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(30deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    
+    @keyframes leg-right {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(-30deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cat">
+    <div class="cat__body"></div>
+    <div class="cat__leg cat__leg--left"></div>
+    <div class="cat__leg cat__leg--right"></div>
+  </div>
+</body>
+</html>
